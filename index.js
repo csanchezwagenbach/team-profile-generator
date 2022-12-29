@@ -31,8 +31,14 @@ inquirer
     ])
     .then((details) => {
         const manager = new Manager(details.name, details.id, details.email, details.officeNumber);
-        console.log(manager);
+        console.log(manager.getRole());
         const html = template.generateHTML(manager);
         fs.writeFile("./dist/index.html", html, (err) =>
         err ? console.error(err) : console.log("Success"))
     })
+    // .prompt([
+    //     {
+    //         type: "list",
+    //         name: ""
+    //     }
+    // ])

@@ -1,4 +1,6 @@
-const generateHTML = ({name, id, email, officeNumber}) => `
+const Manager = require("../lib/Manager");
+
+const generateHTML = (Manager) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +21,13 @@ const generateHTML = ({name, id, email, officeNumber}) => `
         <div class ="row justify-content-around">
             <div class="card col-12 col-md-6 col-lg-4">
                 <div class="card-header">
-                  ${name}
-                  Manager
+                  ${Manager.name}
+                  ${Manager.getRole()}
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${id}</li>
-                    <li class="list-group-item">Email: ${email}</li>
-                    <li class="list-group-item">Office number: ${officeNumber}</li>
+                    <li class="list-group-item">ID: ${Manager.id}</li>
+                    <li class="list-group-item">Email: ${Manager.email}</li>
+                    <li class="list-group-item">Office number: ${Manager.officeNumber}</li>
                 </ul>
             </div>
 `
