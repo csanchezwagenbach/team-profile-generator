@@ -34,16 +34,43 @@ const generateHTML = (Manager) => `
             </div>
 `
 
+const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-4">
+<div class="card-header">
+  ${Intern.name}
+  ${Intern.getRole()}
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">ID: ${Intern.id}</li>
+    <li class="list-group-item">Email: ${Intern.email}</li>
+    <li class="list-group-item">School: ${Intern.getSchool()}</li>
+</ul>
+</div>
+`
 
+const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col-lg-4">
+<div class="card-header">
+  ${Engineer.name}
+  ${Engineer.getRole()}
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">ID: ${Engineer.id}</li>
+    <li class="list-group-item">Email: ${Engineer.email}</li>
+    <li class="list-group-item">Github: ${Engineer.github}</li>
+</ul>
+</div>`
 
-const completeHTML = `
+const completeHTML = () =>  
+`
 </div>
 </div>
 </body>
 </html>
 `
 
+
 module.exports = {
     generateHTML,
+    generateInternCard,
+    generateEngineerCard,
     completeHTML
 };
