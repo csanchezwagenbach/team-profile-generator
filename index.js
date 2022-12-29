@@ -105,12 +105,35 @@ function build() {
     inquirer
         .prompt(addEmployee) 
         .then((next) => {
-            switch(next) {
-                case next === "Add an Engineer":
+            console.log(next.next)
+            switch(next.next) {
+                case "Add an Engineer.":
+                    console.log("Made it here")
+                    inquirer
+                        .prompt(addEngineerQs)
+                        .then((details) => {
+                            const engineer = new Engineer(details.name, details.id, details.email, details.github)
+                            const html = template.generateEngineerCard(engineer);
+                            fs.appendFile("./dist/index.html", html, (err) =>
+                            err ? console.error(err) : console.log("Success"));
+                        })
+                        .then((employee) => {
+                            build();
+                        })
                     break;
-                case next === "Add an Intern":
+                case "Add an Intern.":
+                    console.log("Landed at intern.")
+                    inquirer
+                        .prompt(addInternQs)
+                        .then((details) => {
+                            const intern = new Intern(details.name, details.id, details.email, details.school)
+                            const html = template.generateInternCard(intern);
+                            fs.appendFile("./dist/index.html", html, (err) =>
+                            err ? console.error(err) : console.log("Success"))
+                        })
                     break;
                 default:
+                    console.log("Landed at default")
             }
         })
 }
