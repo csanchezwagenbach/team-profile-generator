@@ -1,6 +1,7 @@
 const Manager = require("../lib/Manager");
 const Intern = require("../lib/Intern");
 const Engineer = require("../lib/Engineer");
+const Inquirer = require("Inquirer")
 
 const generateHTML = (Manager) => `
 <!DOCTYPE html>

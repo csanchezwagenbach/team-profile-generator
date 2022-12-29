@@ -6,8 +6,10 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const template = require("./src/template");
 
-inquirer
-    .prompt([
+
+function initialize() {
+    inquirer
+        .prompt([
         {
             type: "input",
             name: "name",
@@ -36,9 +38,80 @@ inquirer
         fs.writeFile("./dist/index.html", html, (err) =>
         err ? console.error(err) : console.log("Success"))
     })
-    // .prompt([
-    //     {
-    //         type: "list",
-    //         name: ""
-    //     }
-    // ])
+}
+
+const addEmployee = {
+    type: "list",
+    name: "next",
+    message: "How would you like to cointinue building your team?",
+    choices: [
+        "Add an Engineer.",
+        "Add an Intern.",
+        "I'm done building my team."
+    ]
+}
+
+const addEngineerQs = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name of this engineer?"
+    },
+    {
+       type: "input",
+       name: "id",
+       message: "What is the ID number of this engineer?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the email address of this engineer?"
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the github username of this engineer?"
+    }
+]
+
+const addInternQs = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name of this intern?"
+    },
+    {
+       type: "input",
+       name: "id",
+       message: "What is the ID number of your this intern?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the email address of this intern?"
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "Where does this intern go to school?"
+    }
+]
+
+function build() {
+    inquirer
+        .prompt(addEmployee) 
+        .then((next) => {
+            switch(next) {
+                case next === "Add an Engineer":
+                    break;
+                case next === "Add an Intern":
+                    break;
+                default:
+            }
+        })
+}
+
+
+
+// initialize();
+build();
