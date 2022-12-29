@@ -29,3 +29,15 @@ const generateHTML = ({manager}) => `
                 </ul>
             </div>
 `
+
+const completeHTML = `
+</div>
+</div>
+</body>
+</html>
+`
+
+module.exports = {
+    generateHTML,
+    completeHTML
+};
