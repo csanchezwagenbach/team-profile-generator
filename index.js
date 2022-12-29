@@ -33,6 +33,6 @@ inquirer
         const manager = new Manager(details.name, details.id, details.email, details.officeNumber);
         console.log(manager);
         const html = template.generateHTML(manager);
-        fs.writeFile("/dist/index.html", html, (err) =>
+        fs.writeFile("./dist/index.html", html, (err) =>
         err ? console.error(err) : console.log("Success"))
     })
