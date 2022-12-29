@@ -36,7 +36,11 @@ function initialize() {
         console.log(manager.getRole());
         const html = template.generateHTML(manager);
         fs.writeFile("./dist/index.html", html, (err) =>
-        err ? console.error(err) : console.log("Success"))
+        err ? console.error(err) : console.log("Success"));
+        return manager;
+    })
+    .then((employee) => {
+        build();
     })
 }
 
@@ -113,5 +117,5 @@ function build() {
 
 
 
-// initialize();
-build();
+initialize();
+// build();
