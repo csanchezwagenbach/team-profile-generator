@@ -1,6 +1,5 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -33,7 +32,6 @@ function initialize() {
     ])
     .then((details) => {
         const manager = new Manager(details.name, details.id, details.email, details.officeNumber);
-        console.log(manager.getRole());
         const html = template.generateHTML(manager);
         fs.writeFile("./dist/index.html", html, (err) =>
         err ? console.error(err) : console.log("Success"));
@@ -105,10 +103,8 @@ function build() {
     inquirer
         .prompt(addEmployee) 
         .then((next) => {
-            console.log(next.next)
             switch(next.next) {
                 case "Add an Engineer.":
-                    console.log("Made it here")
                     inquirer
                         .prompt(addEngineerQs)
                         .then((details) => {
@@ -122,7 +118,6 @@ function build() {
                         })
                     break;
                 case "Add an Intern.":
-                    console.log("Landed at intern.")
                     inquirer
                         .prompt(addInternQs)
                         .then((details) => {
@@ -146,4 +141,3 @@ function build() {
 
 
 initialize();
-// build();
