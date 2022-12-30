@@ -131,9 +131,14 @@ function build() {
                             fs.appendFile("./dist/index.html", html, (err) =>
                             err ? console.error(err) : console.log("Success"))
                         })
+                        .then((employee) => {
+                            build();
+                        })
                     break;
                 default:
                     console.log("Landed at default")
+                    fs.appendFile("./dist/index.html", template.completeHTML(), (err) =>
+                    err ? console.error(err) : console.log("Success"))
             }
         })
 }
