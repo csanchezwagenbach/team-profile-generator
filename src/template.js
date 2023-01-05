@@ -24,7 +24,7 @@ const generateHTML = (Manager) => `
         <div class ="row justify-content-around">
             <div class="card col-12 col-md-6 col-lg-4">
                 <div class="card-header">
-                  ${Manager.name}
+                  ${Manager.name} <br>
                   ${Manager.getRole()}
                 </div>
                 <ul class="list-group list-group-flush">
@@ -37,7 +37,7 @@ const generateHTML = (Manager) => `
 
 const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-4">
 <div class="card-header">
-  ${Intern.name}
+  ${Intern.name} <br>
   ${Intern.getRole()}
 </div>
 <ul class="list-group list-group-flush">
@@ -50,13 +50,13 @@ const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-
 
 const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col-lg-4">
 <div class="card-header">
-  ${Engineer.name}
+  ${Engineer.name} <br>
   ${Engineer.getRole()}
 </div>
 <ul class="list-group list-group-flush">
     <li class="list-group-item">ID: ${Engineer.id}</li>
     <li class="list-group-item">Email: ${Engineer.email}</li>
-    <li class="list-group-item">Github: ${Engineer.github}</li>
+    <li class="list-group-item">Github: ${Engineer.getGithub()}</li>
 </ul>
 </div>`
 
