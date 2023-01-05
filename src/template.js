@@ -22,7 +22,7 @@ const generateHTML = (Manager) => `
 
     <div class ="container-fluid">
         <div class ="row justify-content-evenly">
-            <div class="card col-12 col-md-6 col-lg-4 mb-2">
+            <div class="card col-12 col-md-6 col-lg-4 mb-2 bg-secondary">
                 <div class="card-header bg-primary text-white my-1">
                   ${Manager.name} <br>
                   ${Manager.getRole()}
@@ -37,7 +37,7 @@ const generateHTML = (Manager) => `
             </div>
 `
 
-const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-4 mb-2">
+const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-4 mb-2 bg-secondary">
 <div class="card-header bg-primary text-white my-1">
   ${Intern.name} <br>
   ${Intern.getRole()}
@@ -52,7 +52,7 @@ const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-
 </div>
 `
 
-const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col-lg-4 mb-2">
+const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col-lg-4 mb-2 bg-secondary">
 <div class="card-header bg-primary text-white my-1">
   ${Engineer.name} <br>
   ${Engineer.getRole()}
