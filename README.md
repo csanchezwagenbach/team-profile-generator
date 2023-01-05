@@ -17,6 +17,9 @@ To run the application users must first download NodeJS. A step by step guide to
 ## Usage
 Using NodeJS, users may run the application in their terminals. The video linked below demonstrates how a user may load the application and run it from start to finish, ending up with a fully-styled and functional index.html file.
 
+[team-profile-generator sample run](https://watch.screencastify.com/v/w3YH5Awrlvuxa6zMSWNY)
+
+
 ## Badges
 ![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
