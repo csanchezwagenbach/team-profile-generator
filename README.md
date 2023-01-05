@@ -7,7 +7,6 @@ This team profile generator utilizes the node package manager along with the inq
 - [Installation](#installation)
 - [Usage](#usage)
 - [Badges](#badges)
-- [Contribute](#contribute)
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
