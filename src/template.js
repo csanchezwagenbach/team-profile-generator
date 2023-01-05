@@ -3,6 +3,8 @@ const Intern = require("../lib/Intern");
 const Engineer = require("../lib/Engineer");
 const Inquirer = require("Inquirer")
 
+// Boiler plate HTML and manager card templates
+
 const generateHTML = (Manager) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +38,7 @@ const generateHTML = (Manager) => `
                 </div>
             </div>
 `
+// Boiler plate HTML templates for Intern cards
 
 const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-4 mb-2 bg-secondary">
 <div class="card-header bg-primary text-white my-1">
@@ -51,6 +54,7 @@ const generateInternCard = (Intern) => `<div class="card col-12 col-md-6 col-lg-
 </div>
 </div>
 `
+// Boiler plate HTML templates for Engineer cards
 
 const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col-lg-4 mb-2 bg-secondary">
 <div class="card-header bg-primary text-white my-1">
@@ -65,6 +69,8 @@ const generateEngineerCard = (Engineer) => `<div class="card col-12 col-md-6 col
 </ul>
 </div>
 </div>`
+
+// HTML template to write conclusion of index.html
 
 const completeHTML = () =>  
 `
